@@ -1,0 +1,16 @@
+avatar: /assets/images/avatar-placeholder.svg
+github: https://github.com/rondonit
+pt:
+  bio: '[Sua área de atuação e os assuntos que gosta de explorar.]'
+  location: '[Sua localização]'
+  avatar_alt: Espaço reservado para sua foto de perfil
+  sidebar_label: Perfil e navegação
+  open_menu: Abrir menu
+  close_menu: Fechar menu
+en:
+  bio: '[What you do and the topics you enjoy exploring.]'
+  location: '[Your location]'
+  avatar_alt: Placeholder for your profile photo
+  sidebar_label: Profile and navigation
+  open_menu: Open menu
+  close_menu: Close menu

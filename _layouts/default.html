@@ -7,15 +7,19 @@
   <head>
     {% include head.html locale=page.locale %}
     {% include head/custom.html %}
+    <script src="{{ '/assets/js/navigation.js' | relative_url }}" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">{{ copy.skip }}</a>
-    {% comment %}Do not cache by locale: the language switch depends on the current page.{% endcomment %}
-    {% include masthead.html %}
-    {{ content }}
-    <footer class="site-footer">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ copy.site_name | escape }} <span aria-hidden="true">·</span> {{ copy.footer }}</p>
-      <p><a href="https://github.com/rondonit">GitHub</a> <span aria-hidden="true">·</span> <a href="https://jekyllrb.com/">Jekyll</a> / <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a></p>
-    </footer>
+    {% comment %}The language switch and active menu depend on the current page.{% endcomment %}
+    {% include sidebar.html %}
+    <div class="site-workspace" id="site-workspace">
+      {% include masthead.html %}
+      {{ content }}
+      <footer class="site-footer">
+        <p>&copy; {{ site.time | date: "%Y" }} {{ copy.site_name | escape }} <span aria-hidden="true">·</span> {{ copy.footer }}</p>
+        <p><a href="https://jekyllrb.com/">Jekyll</a> / <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a></p>
+      </footer>
+    </div>
   </body>
 </html>

@@ -1,0 +1,26 @@
+{% assign lang = page.lang | default: "pt" %}
+{% assign copy = site.data.i18n[lang] %}
+{% assign profile = site.data.profile[lang] %}
+<aside id="site-sidebar" class="site-sidebar" aria-label="{{ profile.sidebar_label }}">
+  <button id="sidebar-close" class="sidebar-close" type="button" aria-label="{{ profile.close_menu }}" hidden>{% include icon.html name="close" %}</button>
+  <header class="profile">
+    <a class="profile__avatar" href="{{ '/' | append: lang | append: '/' | relative_url }}">
+      <img src="{{ site.data.profile.avatar | relative_url }}" width="112" height="112" alt="{{ profile.avatar_alt }}">
+    </a>
+    <a class="profile__name" href="{{ '/' | append: lang | append: '/' | relative_url }}">{{ copy.site_name | escape }}</a>
+    {% if profile.bio %}<p class="profile__bio">{{ profile.bio | escape }}</p>{% endif %}
+    {% if profile.location %}<p class="profile__location">{% include icon.html name="location" %}<span>{{ profile.location | escape }}</span></p>{% endif %}
+  </header>
+  <nav class="primary-nav" aria-label="{{ copy.nav_label }}">
+    {% for link in site.data.navigation[lang] %}
+      <a href="{{ link.url | relative_url }}"{% if page.nav_key == link.key %} aria-current="page"{% endif %}>
+        {% include icon.html name=link.key %}<span>{{ link.title }}</span>
+      </a>
+    {% endfor %}
+  </nav>
+  <div class="sidebar-footer">
+    <a href="{{ site.data.profile.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>
+    <p>{{ copy.footer }}</p>
+  </div>
+</aside>
+<button class="sidebar-backdrop" id="sidebar-backdrop" type="button" aria-label="{{ profile.close_menu }}" tabindex="-1" hidden></button>

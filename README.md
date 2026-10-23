@@ -1,7 +1,15 @@
 # Blog pessoal — rondonit.github.io
 
 Blog em Markdown com Jekyll e Minimal Mistakes (`4.28.1`), tema escuro e conteúdo
-demonstrativo em português e inglês. O menu tem quatro páginas por idioma:
+demonstrativo em português e inglês.
+
+O layout segue a estrutura de [some-natalie.dev](https://some-natalie.dev/):
+barra lateral fixa com foto circular, nome, apresentação e navegação vertical,
+com cards para os posts. No celular, um botão abre a barra lateral; o menu pode
+ser fechado com o botão, com Escape ou ao tocar fora. Sem JavaScript, o perfil
+e a navegação continuam visíveis acima do conteúdo.
+
+O menu mantém quatro páginas por idioma:
 
 | Página | Português | Inglês |
 | --- | --- | --- |
@@ -47,6 +55,7 @@ o Markdown; para reconstruir, use `bundle exec jekyll build` no container.
 | Arquivo ou pasta | O que editar |
 | --- | --- |
 | `_data/i18n.yml` | Nome, descrição e textos da interface em cada idioma |
+| `_data/profile.yml` | Foto, biografia, localização e GitHub da barra lateral |
 | `_data/navigation.yml` | As quatro opções do menu de cada idioma |
 | `_data/languages.yml` | Idiomas, bandeiras e páginas iniciais |
 | `_data/resources.yml` | Links e ferramentas favoritos, separados por idioma |
@@ -66,6 +75,11 @@ um favorito real, preencha seu nome, descrição e endereço em `_data/resources
 
 Os textos, projetos mencionados nos posts e favoritos são exemplos, não uma
 biografia ou recomendações reais. Substitua-os quando quiser personalizar o site.
+
+A foto inicial é uma silhueta demonstrativa em `assets/images/avatar-placeholder.svg`.
+Para usar sua foto, coloque o arquivo em `assets/images/` e altere `avatar` em
+`_data/profile.yml`. Nome e informações são traduzidos pelos arquivos de dados;
+as mesmas foto e URL do GitHub são usadas nos dois idiomas.
 
 ## Posts e traduções
 

@@ -4,10 +4,12 @@
 {% if posts.size > 0 %}
 <ul class="post-list">
   {% for post in posts limit: post_limit %}
-  <li>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{% if page.lang == "pt" %}{{ post.date | date: "%d/%m/%Y" }}{% else %}{{ post.date | date: "%Y-%m-%d" }}{% endif %}</time>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-    <p>{{ post.excerpt | strip_html | escape }}</p>
+  <li class="post-card">
+    <a class="post-card__link" href="{{ post.url | relative_url }}" aria-labelledby="post-title-{{ forloop.index }}">
+      <h3 id="post-title-{{ forloop.index }}">{{ post.title | escape }}</h3>
+      <p>{{ post.excerpt | strip_html | escape }}</p>
+      <span class="post-card__meta">{% include icon.html name="calendar" %}<time datetime="{{ post.date | date_to_xmlschema }}">{% if page.lang == "pt" %}{{ post.date | date: "%d/%m/%Y" }}{% else %}{{ post.date | date: "%Y-%m-%d" }}{% endif %}</time></span>
+    </a>
   </li>
   {% endfor %}
 </ul>

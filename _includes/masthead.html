@@ -1,13 +1,11 @@
 {% assign lang = page.lang | default: "pt" %}
 {% assign copy = site.data.i18n[lang] %}
+{% assign profile = site.data.profile[lang] %}
+{% assign current_nav = site.data.navigation[lang] | where: "key", page.nav_key | first %}
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-brand" href="{{ '/' | append: lang | append: '/' | relative_url }}">{{ copy.site_name | escape }}</a>
-    <nav class="primary-nav" aria-label="{{ copy.nav_label }}">
-      {% for link in site.data.navigation[lang] %}
-        <a href="{{ link.url | relative_url }}"{% if page.nav_key == link.key %} aria-current="page"{% endif %}>{{ link.title }}</a>
-      {% endfor %}
-    </nav>
+    <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="{{ profile.open_menu }}" aria-expanded="false" aria-controls="site-sidebar" hidden>{% include icon.html name="menu" %}</button>
+    <p class="topbar-context">{{ current_nav.title | default: copy.site_name | escape }}</p>
     <nav class="language-switch" aria-label="{{ copy.language_label }}">
       {% for language in site.data.languages %}
         {% capture target %}{% include translation-url.html lang=language.code %}{% endcapture %}
