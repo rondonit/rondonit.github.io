@@ -1,0 +1,15 @@
+{% assign copy = site.data.i18n[page.lang] %}
+{% for group in site.data.resources[page.lang] %}
+<section class="resource-group" aria-labelledby="resource-{{ forloop.index }}">
+  <h2 id="resource-{{ forloop.index }}">{{ group.title }}</h2>
+  <ul class="resource-list">
+    {% for item in group.items %}
+    <li>
+      <h3>{% if item.url and item.url != "" %}<a href="{{ item.url | escape }}">{{ item.name | escape }}</a>{% else %}{{ item.name | escape }}{% endif %}</h3>
+      <p>{{ item.description | escape }}</p>
+      {% unless item.url and item.url != "" %}<span class="resource-pending">{{ copy.soon }}</span>{% endunless %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

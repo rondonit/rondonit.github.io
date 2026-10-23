@@ -1,0 +1,53 @@
+# Textos demonstrativos; personalize os arquivos em _data e _pages.
+title: Seu nome
+name: Seu nome
+description: Um espaço pessoal para ideias, projetos e aprendizados. Conteúdo de exemplo.
+url: https://rondonit.github.io
+baseurl: ''
+repository: rondonit/rondonit.github.io
+locale: pt-BR
+timezone: America/Sao_Paulo
+encoding: utf-8
+remote_theme: mmistakes/minimal-mistakes@4.28.1
+minimal_mistakes_skin: dark
+markdown: kramdown
+highlighter: rouge
+search: false
+breadcrumbs: false
+atom_feed:
+  hide: true
+include:
+- _pages
+exclude:
+- README.md
+- LICENSE
+- Gemfile
+- Gemfile.lock
+- vendor
+- .bundle
+- .devcontainer
+plugins:
+- jekyll-remote-theme
+- jekyll-include-cache
+- jekyll-sitemap
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: page-simple
+    lang: pt
+    locale: pt-BR
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    author_profile: false
+    comments: false
+    share: false
+    related: false
+- scope:
+    path: _pages/en
+  values:
+    lang: en
+    locale: en-US

@@ -1,0 +1,34 @@
+pt:
+- title: Links que gosto
+  items:
+  - name: '[Nome do site ou referência]'
+    description: '[Uma frase sobre o que você encontra aqui e por que vale a visita.]'
+    url: null
+  - name: '[Outra referência]'
+    description: '[Um artigo, uma comunidade ou um material que você gosta de consultar.]'
+    url: null
+- title: Ferramentas que uso
+  items:
+  - name: '[Nome da ferramenta]'
+    description: '[Para que você usa esta ferramenta e o que gosta nela.]'
+    url: null
+  - name: '[Outra ferramenta]'
+    description: '[Uma breve descrição de como ela faz parte do seu dia a dia.]'
+    url: null
+en:
+- title: Links I like
+  items:
+  - name: '[Website or reference name]'
+    description: '[A sentence about what you can find here and why it is worth a visit.]'
+    url: null
+  - name: '[Another reference]'
+    description: '[An article, community or resource you enjoy returning to.]'
+    url: null
+- title: Tools I use
+  items:
+  - name: '[Tool name]'
+    description: '[What you use this tool for and what you like about it.]'
+    url: null
+  - name: '[Another tool]'
+    description: '[A short description of how it fits into your day.]'
+    url: null

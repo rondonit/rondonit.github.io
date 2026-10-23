@@ -1,0 +1,27 @@
+pt:
+  site_name: Seu nome
+  description: Um espaço pessoal para ideias, projetos e aprendizados. Conteúdo de
+    exemplo.
+  nav_label: Navegação principal
+  language_label: Selecionar idioma
+  skip: Pular para o conteúdo
+  latest: Posts recentes
+  all_posts: Ver todos os posts
+  back: Voltar para os posts
+  empty: Nenhum post por aqui ainda.
+  placeholder: Conteúdo de exemplo.
+  soon: Link em breve
+  footer: Ideias, projetos e aprendizados.
+en:
+  site_name: Your name
+  description: A personal space for ideas, projects and learning. Placeholder content.
+  nav_label: Main navigation
+  language_label: Choose language
+  skip: Skip to content
+  latest: Recent posts
+  all_posts: View all posts
+  back: Back to posts
+  empty: No posts here yet.
+  placeholder: Placeholder content.
+  soon: Link coming soon
+  footer: Ideas, projects and learning.

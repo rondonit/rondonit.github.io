@@ -1,0 +1,21 @@
+---
+---
+{% assign lang = page.lang | default: "pt" %}
+{% assign copy = site.data.i18n[lang] %}
+<!doctype html>
+<html lang="{{ page.locale | default: site.locale }}" class="no-js">
+  <head>
+    {% include head.html locale=page.locale %}
+    {% include head/custom.html %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{{ copy.skip }}</a>
+    {% comment %}Do not cache by locale: the language switch depends on the current page.{% endcomment %}
+    {% include masthead.html %}
+    {{ content }}
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ copy.site_name | escape }} <span aria-hidden="true">·</span> {{ copy.footer }}</p>
+      <p><a href="https://github.com/rondonit">GitHub</a> <span aria-hidden="true">·</span> <a href="https://jekyllrb.com/">Jekyll</a> / <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a></p>
+    </footer>
+  </body>
+</html>

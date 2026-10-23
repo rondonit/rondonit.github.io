@@ -1,0 +1,6 @@
+{%- assign candidates = site.pages | concat: site.posts -%}
+{%- assign match = nil -%}
+{%- if page.translation_key -%}
+  {%- assign match = candidates | where: "translation_key", page.translation_key | where: "lang", include.lang | first -%}
+{%- endif -%}
+{%- if match -%}{{- match.url -}}{%- else -%}/{{- include.lang -}}/{%- endif -%}

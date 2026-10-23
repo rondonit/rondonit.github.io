@@ -1,0 +1,16 @@
+{
+  "name": "Blog Jekyll",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.3-bookworm",
+  "containerEnv": {
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8"
+  },
+  "forwardPorts": [4000],
+  "portsAttributes": {
+    "4000": {
+      "label": "Preview do blog",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bundle config set --local path vendor/bundle && bundle install"
+}

@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<main id="main" class="content-shell" tabindex="-1">
+  <article class="blog-content">
+    <header class="content-heading">
+      {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow | escape }}</p>{% endif %}
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.date %}<time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{% if page.lang == "pt" %}{{ page.date | date: "%d/%m/%Y" }}{% else %}{{ page.date | date: "%Y-%m-%d" }}{% endif %}</time>{% endif %}
+    </header>
+    <div class="page__content">{{ content }}</div>
+  </article>
+</main>

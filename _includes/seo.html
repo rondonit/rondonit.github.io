@@ -1,0 +1,17 @@
+{% assign lang = page.lang | default: "pt" %}
+{% assign copy = site.data.i18n[lang] %}
+{% assign description = page.description | default: page.excerpt | default: copy.description | strip_html | strip_newlines | strip %}
+<title>{{ page.title | default: copy.site_name | escape }} · {{ copy.site_name | escape }}</title>
+<meta name="description" content="{{ description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ copy.site_name | escape }}">
+<meta property="og:title" content="{{ page.title | default: copy.site_name | escape }}">
+<meta property="og:description" content="{{ description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:locale" content="{{ page.locale | default: site.locale | replace: '-', '_' }}">
+{% if page.date %}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% else %}
+<meta property="og:type" content="website">
+{% endif %}

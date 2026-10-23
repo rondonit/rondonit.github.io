@@ -1,0 +1,26 @@
+pt:
+- title: Início
+  url: /pt/
+  key: home
+- title: Posts
+  url: /pt/posts/
+  key: posts
+- title: Links
+  url: /pt/links/
+  key: links
+- title: Sobre
+  url: /pt/about/
+  key: about
+en:
+- title: Home
+  url: /en/
+  key: home
+- title: Posts
+  url: /en/posts/
+  key: posts
+- title: Links
+  url: /en/links/
+  key: links
+- title: About
+  url: /en/about/
+  key: about

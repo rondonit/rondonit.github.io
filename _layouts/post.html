@@ -1,0 +1,6 @@
+---
+layout: page-simple
+---
+{{ content }}
+{% assign copy = site.data.i18n[page.lang] %}
+<p class="back-link"><a href="{{ '/' | append: page.lang | append: '/posts/' | relative_url }}">← {{ copy.back }}</a></p>
